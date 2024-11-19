@@ -1,0 +1,8 @@
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/esarkhan/Unity Projects/Test Mobile Game 1/.utmp/RelWithDebInfo/6h6t6643/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

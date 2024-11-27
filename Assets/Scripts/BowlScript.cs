@@ -11,6 +11,7 @@ public class BowlerScript : MonoBehaviour
     }
 
     public Animator bowlerAnimator;
+    public Animator batsmanAnimator;
     public Transform boundryPoint;
     public Transform tapPoint;
     public Transform tapPointEnd;
@@ -43,12 +44,19 @@ public class BowlerScript : MonoBehaviour
     private int currentShotIndex = 0;
 
     public ParticleSystem sixHitEffect; // Assign in the Inspector
-private TrailRenderer ballTrailRenderer;
+    private TrailRenderer ballTrailRenderer;
+
+    
 
 
     void Start()
     {
         bowlerAnimator = GetComponent<Animator>();
+
+        // batsmanAnimator = GetComponent<Animator>();
+
+
+
 
         if (ball != null && ballShadow != null)
         {
@@ -74,6 +82,11 @@ private TrailRenderer ballTrailRenderer;
 
       currentShotIndex = Random.Range(0, (shotConfigurations.Count));
       Debug.Log("LOG::" +currentShotIndex);
+
+       if (batsmanAnimator != null)
+    {
+        batsmanAnimator.SetTrigger("Idle");
+    }
     }
 
     void Update()
@@ -245,21 +258,36 @@ private TrailRenderer ballTrailRenderer;
             bowlerAnimator.Play("BowlerAnimation", 0, 0);
 
             Debug.Log("Restarting bowling sequence.");
+
+                              if (batsmanAnimator != null)
+    {
+        batsmanAnimator.SetTrigger("Idle");
+    }
         }
     }
 
     public void OnHitButtonPressed()
     {
-        CheckForHit();
+         HitShot();
+        //  CheckForHit();
+         
     }
 
-    private void CheckForHit()
+    private void HitShot(){
+        if (batsmanAnimator != null)
+         {
+            batsmanAnimator.SetTrigger("Hit");
+         }
+    }
+
+    public void CheckForHit()
     {
         if (ball != null)
         {
             float distanceToBat = Vector3.Distance(ball.transform.position, tapPointEnd.position);
             Debug.Log("Distance: :: :: : " + distanceToBat);
-            if (distanceToBat <= hitDistanceThreshold)
+            // if (distanceToBat <= hitDistanceThreshold)
+            if (distanceToBat >= 3 && distanceToBat <= 4) 
             {
                 startPoint = ball.transform.position; // Set the start point for the parabolic arc
                 shotStatusEnum = ShotStatus.Hit;
@@ -271,6 +299,8 @@ private TrailRenderer ballTrailRenderer;
                 shotStatusEnum = ShotStatus.Missed;
                 Debug.Log("Missed!");
             }
+        }else{
+            Debug.Log("Ball is null!");
         }
     }
 
